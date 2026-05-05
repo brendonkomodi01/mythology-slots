@@ -28,10 +28,10 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(request -> {
                     var config = new org.springframework.web.cors.CorsConfiguration();
-                    config.setAllowedOriginPatterns(java.util.List.of("http://localhost:*"));
+                    config.setAllowedOriginPatterns(java.util.List.of("*"));
                     config.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                     config.setAllowedHeaders(java.util.List.of("*"));
-                    config.setAllowCredentials(true);
+                    config.setAllowCredentials(false);
                     return config;
                 }))
                 .sessionManagement(session -> session
